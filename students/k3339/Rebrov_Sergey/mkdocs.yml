@@ -6,5 +6,9 @@ nav:
       - Задание 3: LR1/task3.md
       - Задание 4: LR1/task4.md
       - Задание 5: LR1/task5.md
+  - Лабораторная работа 2:
+      - Создание моделей: LR2/step1.md
+      - Интерфейс ученика: LR2/step2.md
+      - Интерфейс учителя: LR2/step3.md
 theme:
   name: material
