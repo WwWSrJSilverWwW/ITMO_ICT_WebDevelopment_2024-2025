@@ -1,7 +1,7 @@
 import socket
 import threading
 
-name = "Иван"
+name = input("Введите имя: ")
 
 
 def receive_messages(client_sock):

@@ -126,6 +126,9 @@ class MyHTTPServer:
 
 
 server = MyHTTPServer('localhost', 8080)
+
+print("http://localhost:8080")
+
 try:
     server.serve_forever()
 except KeyboardInterrupt:
