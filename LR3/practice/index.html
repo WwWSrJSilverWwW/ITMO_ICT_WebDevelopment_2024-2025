@@ -660,21 +660,21 @@ Owner(last_name=&quot;Иванов&quot;, first_name=&quot;Алексей&quot;,
 Owner(last_name=&quot;Смирнова&quot;, first_name=&quot;Анна&quot;, birth_date=&quot;2003-11-22&quot;).save()
 Owner(last_name=&quot;Кузнецов&quot;, first_name=&quot;Дмитрий&quot;, birth_date=&quot;2004-01-30&quot;).save()
 Owner(last_name=&quot;Петрова&quot;, first_name=&quot;Мария&quot;, birth_date=&quot;2003-05-18&quot;).save()
-
-Car(number=&quot;Н072ЕМ&quot;, mark=&quot;BMW&quot;, model=&quot;M3&quot;, color=&quot;Красный&quot;).save()
+</code></pre>
+<pre><code class="language-python">Car(number=&quot;Н072ЕМ&quot;, mark=&quot;BMW&quot;, model=&quot;M3&quot;, color=&quot;Красный&quot;).save()
 Car(number=&quot;А123ВС&quot;, mark=&quot;Audi&quot;, model=&quot;R8&quot;, color=&quot;Синий&quot;).save()
 Car(number=&quot;М456ОР&quot;, mark=&quot;Mercedes&quot;, model=&quot;C-Class&quot;, color=&quot;Белый&quot;).save()
 Car(number=&quot;К789ТС&quot;, mark=&quot;Toyota&quot;, model=&quot;Camry&quot;, color=&quot;Черный&quot;).save()
 Car(number=&quot;Р321НО&quot;, mark=&quot;Lexus&quot;, model=&quot;RX 350&quot;, color=&quot;Серый&quot;).save()
-
-License(owner=Owner.objects.get(id=1), number=&quot;7715123456&quot;, type=&quot;private&quot;, date=&quot;2024-07-13&quot;).save()
+</code></pre>
+<pre><code class="language-python">License(owner=Owner.objects.get(id=1), number=&quot;7715123456&quot;, type=&quot;private&quot;, date=&quot;2024-07-13&quot;).save()
 License(owner=Owner.objects.get(id=2), number=&quot;1234351234&quot;, type=&quot;private&quot;, date=&quot;2023-08-13&quot;).save()
 License(owner=Owner.objects.get(id=3), number=&quot;5033123456&quot;, type=&quot;commercial&quot;, date=&quot;2023-05-20&quot;).save()
 License(owner=Owner.objects.get(id=4), number=&quot;3412987654&quot;, type=&quot;private&quot;, date=&quot;2022-09-15&quot;).save()
 License(owner=Owner.objects.get(id=5), number=&quot;7800456789&quot;, type=&quot;special&quot;, date=&quot;2024-01-10&quot;).save()
 License(owner=Owner.objects.get(id=6), number=&quot;4612345678&quot;, type=&quot;private&quot;, date=&quot;2023-03-25&quot;).save()
-
-CarOwner(owner=Owner.objects.get(id=1), car=Car.objects.get(id=1), start_date=&quot;2020-10-10&quot;, end_date=&quot;2021-10-09&quot;).save()
+</code></pre>
+<pre><code class="language-python">CarOwner(owner=Owner.objects.get(id=1), car=Car.objects.get(id=1), start_date=&quot;2020-10-10&quot;, end_date=&quot;2021-10-09&quot;).save()
 CarOwner(owner=Owner.objects.get(id=1), car=Car.objects.get(id=2), start_date=&quot;2020-11-10&quot;).save()
 CarOwner(owner=Owner.objects.get(id=1), car=Car.objects.get(id=3), start_date=&quot;2020-12-10&quot;).save()
 CarOwner(owner=Owner.objects.get(id=2), car=Car.objects.get(id=2), start_date=&quot;2020-11-10&quot;).save()
@@ -682,12 +682,13 @@ CarOwner(owner=Owner.objects.get(id=3), car=Car.objects.get(id=5), start_date=&q
 CarOwner(owner=Owner.objects.get(id=4), car=Car.objects.get(id=4), start_date=&quot;2024-05-02&quot;).save()
 CarOwner(owner=Owner.objects.get(id=5), car=Car.objects.get(id=1), start_date=&quot;2021-10-09&quot;).save()
 CarOwner(owner=Owner.objects.get(id=6), car=Car.objects.get(id=4), start_date=&quot;2024-05-02&quot;).save()
-
-Owner.objects.all()
+</code></pre>
+<pre><code class="language-python">Owner.objects.all()
 Car.objects.all()
 License.objects.all()
 CarOwner.objects.all()
 </code></pre>
+<p><img alt="" src="../../images/15.png" /></p>
 <h2 id="32"><strong>Задание 3.2:</strong></h2>
 <pre><code class="language-python">Car.objects.filter(mark=&quot;Toyota&quot;)
 Owner.objects.filter(first_name=&quot;Петр&quot;)
@@ -695,6 +696,7 @@ License.objects.filter(owner=Owner.objects.get(id=2))
 Owner.objects.filter(car_owner__car__color=&quot;Красный&quot;)
 Owner.objects.filter(car_owner__start_date__gte=&quot;2021-01-01&quot;)
 </code></pre>
+<p><img alt="" src="../../images/16.png" /></p>
 <h2 id="33"><strong>Задание 3.3:</strong></h2>
 <pre><code class="language-python">License.objects.aggregate(max_date=Max(&quot;date&quot;))
 CarOwner.objects.aggregate(max_date=Max(&quot;end_date&quot;))
@@ -702,6 +704,7 @@ CarOwner.objects.aggregate(max_date=Max(&quot;end_date&quot;))
 Car.objects.values(&quot;mark&quot;).annotate(Count(&quot;id&quot;))
 Owner.objects.order_by(&quot;license_owner__date&quot;)
 </code></pre>
+<p><img alt="" src="../../images/17.png" /></p>
 
 
 
