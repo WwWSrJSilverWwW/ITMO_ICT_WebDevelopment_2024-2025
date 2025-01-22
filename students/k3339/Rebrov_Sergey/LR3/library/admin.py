@@ -27,7 +27,7 @@ class HallAdmin(admin.ModelAdmin):
 
 
 class ReaderAdmin(admin.ModelAdmin):
-    list_display = ['id', 'surname', 'name', 'patronymic', 'ticket', 'passport', 'birth_date', 'address', 'phone', 'education', 'is_academic', 'hall']
+    list_display = ['id', 'user', 'surname', 'name', 'patronymic', 'ticket', 'passport', 'birth_date', 'address', 'phone', 'education', 'is_academic', 'hall']
 
 
 class BookAuthorAdmin(admin.ModelAdmin):

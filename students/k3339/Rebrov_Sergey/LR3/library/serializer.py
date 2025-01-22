@@ -23,7 +23,6 @@ class BookReadSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'publisher', 'cipher', 'authors']
 
     def get_authors(self, obj):
-        # Получаем всех авторов через промежуточную модель
         authors = Author.objects.filter(bookauthor__book=obj)
         return AuthorSerializer(authors, many=True).data
 
@@ -94,15 +93,28 @@ class ReaderReadSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Reader
-        fields = ["id", "surname", "name", "patronymic", "ticket", "passport", "birth_date", "address", "phone", "education", "is_academic", "hall"]
+        fields = ["id", "user", "surname", "name", "patronymic", "ticket", "passport", "birth_date", "address", "phone", "education", "is_academic", "hall"]
 
 
 class ReaderWriteSerializer(serializers.ModelSerializer):
-    hall = serializers.PrimaryKeyRelatedField(queryset=Hall.objects.all())
+    hall = serializers.PrimaryKeyRelatedField(queryset=Hall.objects.all(), allow_null=True, required=False)
+    surname = serializers.CharField(allow_null=True, allow_blank=True, required=False)
+    name = serializers.CharField(allow_null=True, allow_blank=True, required=False)
+    patronymic = serializers.CharField(allow_null=True, allow_blank=True, required=False)
+    ticket = serializers.CharField(allow_null=True, allow_blank=True, required=False)
+    passport = serializers.CharField(allow_null=True, allow_blank=True, required=False)
+    birth_date = serializers.DateField(allow_null=True, required=False)
+    address = serializers.CharField(allow_null=True, allow_blank=True, required=False)
+    phone = serializers.CharField(allow_null=True, allow_blank=True, required=False)
+    education = serializers.CharField(allow_null=True, allow_blank=True, required=False)
+    is_academic = serializers.BooleanField(required=False)
 
     class Meta:
         model = Reader
-        fields = ["id", "surname", "name", "patronymic", "ticket", "passport", "birth_date", "address", "phone", "education", "is_academic", "hall"]
+        fields = [
+            "id", "user", "surname", "name", "patronymic", "ticket", "passport",
+            "birth_date", "address", "phone", "education", "is_academic", "hall"
+        ]
 
     def update(self, instance, validated_data):
         hall_data = validated_data.pop('hall', None)
@@ -126,3 +138,8 @@ class AddBookRequestSerializer(serializers.Serializer):
     book = serializers.IntegerField()
     hall = serializers.IntegerField()
     amount = serializers.IntegerField(required=False, min_value=1)
+
+
+class AttachUserRequestSerializer(serializers.Serializer):
+    reader = serializers.IntegerField()
+    hall = serializers.IntegerField()

@@ -72,3 +72,9 @@ while True:
     client_socket.sendall(result.encode())
     client_socket.close()
 ```
+
+## **Скриншоты:**
+
+![](../images/03.png)
+
+![](../images/04.png)

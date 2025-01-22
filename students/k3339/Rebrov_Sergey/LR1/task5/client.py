@@ -10,4 +10,4 @@ def send_post_request(url, discipline, grade):
     print(response.text)
 
 
-send_post_request('http://localhost:8080', 'Русский язык', 5)
+send_post_request('http://localhost:8080', 'Химия', 2)

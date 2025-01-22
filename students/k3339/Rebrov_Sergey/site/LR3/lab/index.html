@@ -1,0 +1,1228 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../practice/">
+      
+      
+        <link rel="next" href="../../LR4/reader/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.46">
+    
+    
+      
+        <title>Лабораторная работа - Web-Development</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Web-Development" class="md-header__button md-logo" aria-label="Web-Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Web-Development
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Лабораторная работа
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Web-Development" class="md-nav__button md-logo" aria-label="Web-Development" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Web-Development
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Лабораторная работа 1
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа 1
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LR1/task1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Задание 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LR1/task2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Задание 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LR1/task3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Задание 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LR1/task4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Задание 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LR1/task5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Задание 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Лабораторная работа 2
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа 2
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LR2/step1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Создание моделей
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LR2/step2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Интерфейс ученика
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LR2/step3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Интерфейс учителя
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Лабораторная работа 3
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа 3
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Практическая работа
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Лабораторная работа
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Лабораторная работа
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Задание
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Проектирование моделей
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Реализация API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Скриншоты:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Лабораторная работа 4
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Лабораторная работа 4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LR4/reader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Интерфейс читателя
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LR4/librarian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Интерфейс библиотекаря
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Задание
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Проектирование моделей
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Реализация API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Скриншоты:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Лабораторная работа</h1>
+
+<h2 id="_1"><strong>Задание</strong></h2>
+<p>В рамках лабораторной работы были выполнены задачи, связанные с проектированием моделей базы данных, реализацией API с использованием Django REST Framework (DRF), а также функционалами работы с моделями через Django ORM.</p>
+<h2 id="_2"><strong>Проектирование моделей</strong></h2>
+<p>Созданы модели для работы с библиотечной системой:</p>
+<ul>
+<li><code>Publisher</code> — издатель книг.</li>
+<li><code>Author</code> — авторы книг.</li>
+<li><code>Book</code> — книги с привязкой к издателям.</li>
+<li><code>Library</code> — библиотеки.</li>
+<li><code>Hall</code> — залы библиотек с указанием вместимости и привязкой к библиотеке.</li>
+<li><code>Reader</code> — читатели с информацией о привязке к залам и личных данных.</li>
+<li><code>BookAuthor</code> — связь многих-ко-многим между книгами и авторами.</li>
+<li><code>BookReader</code> — учет выдачи книг читателям с указанием сроков.</li>
+<li><code>BookHall</code> — количество экземпляров книги в залах.</li>
+</ul>
+<p><code>views.py</code></p>
+<pre><code class="language-python">from datetime import date
+from rest_framework import status
+from rest_framework.views import APIView, Response
+from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView
+from .serializer import *
+
+
+class BooksAPIView(ListCreateAPIView):
+    queryset = Book.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method in ['GET']:
+            return BookReadSerializer
+        return BookWriteSerializer
+
+
+class BookAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Book.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method in ['GET']:
+            return BookReadSerializer
+        return BookWriteSerializer
+
+
+class AuthorsAPIView(ListCreateAPIView):
+    serializer_class = AuthorSerializer
+    queryset = Author.objects.all()
+
+
+class AuthorAPIView(RetrieveUpdateDestroyAPIView):
+    serializer_class = AuthorSerializer
+    queryset = Author.objects.all()
+
+
+class PublishersAPIView(ListCreateAPIView):
+    serializer_class = PublisherSerializer
+    queryset = Publisher.objects.all()
+
+
+class PublisherAPIView(RetrieveUpdateDestroyAPIView):
+    serializer_class = PublisherSerializer
+    queryset = Publisher.objects.all()
+
+
+class LibrariesAPIView(ListCreateAPIView):
+    serializer_class = LibrarySerializer
+    queryset = Library.objects.all()
+
+
+class LibraryAPIView(RetrieveUpdateDestroyAPIView):
+    serializer_class = LibrarySerializer
+    queryset = Library.objects.all()
+
+
+class HallsAPIView(ListCreateAPIView):
+    queryset = Hall.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method in ['GET']:
+            return HallReadSerializer
+        return HallWriteSerializer
+
+
+class HallAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Hall.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method in ['GET']:
+            return HallReadSerializer
+        return HallWriteSerializer
+
+
+class ReadersAPIView(ListCreateAPIView):
+    queryset = Reader.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method in ['GET']:
+            return ReaderReadSerializer
+        return ReaderWriteSerializer
+
+
+class ReaderAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Reader.objects.all()
+
+    def get_serializer_class(self):
+        if self.request.method in ['GET']:
+            return ReaderReadSerializer
+        return ReaderWriteSerializer
+
+
+class RentBookAPIView(APIView):
+    def post(self, request):
+        serializer = BookReaderRequestSerializer(data=request.data)
+
+        if serializer.is_valid():
+            book_id = serializer.validated_data['book']
+            reader_id = serializer.validated_data['reader']
+
+            try:
+                book = Book.objects.get(id=book_id)
+                reader = Reader.objects.get(id=reader_id)
+            except (Book.DoesNotExist, Reader.DoesNotExist):
+                return Response({&quot;detail&quot;: &quot;Book or Reader not found&quot;}, status=status.HTTP_404_NOT_FOUND)
+
+            hall = reader.hall
+
+            book_hall = BookHall.objects.filter(book=book, hall=hall).first()
+
+            if not book_hall or book_hall.count &lt;= 0:
+                return Response({&quot;detail&quot;: &quot;Book not available in this hall&quot;}, status=status.HTTP_400_BAD_REQUEST)
+
+            book_reader = BookReader(book=book, reader=reader, start_date=date.today())
+            book_reader.save()
+
+            book_hall.count -= 1
+            book_hall.save()
+
+            return Response({&quot;detail&quot;: &quot;Book rented successfully&quot;}, status=status.HTTP_200_OK)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class ReturnBookAPIView(APIView):
+    def post(self, request):
+        serializer = BookReaderRequestSerializer(data=request.data)
+
+        if serializer.is_valid():
+            book_id = serializer.validated_data['book']
+            reader_id = serializer.validated_data['reader']
+
+            try:
+                book = Book.objects.get(id=book_id)
+                reader = Reader.objects.get(id=reader_id)
+            except (Book.DoesNotExist, Reader.DoesNotExist):
+                return Response({&quot;detail&quot;: &quot;Book or Reader not found&quot;}, status=status.HTTP_404_NOT_FOUND)
+
+            hall = reader.hall
+
+            book_hall = BookHall.objects.filter(book=book, hall=hall).first()
+
+            if not book_hall:
+                return Response({&quot;detail&quot;: &quot;Book not available in this hall&quot;}, status=status.HTTP_400_BAD_REQUEST)
+
+            book_reader = BookReader.objects.filter(book=book, reader=reader, end_date=None).first()
+            if not book_reader:
+                return Response({&quot;detail&quot;: &quot;Reader doesn't have this book&quot;}, status=status.HTTP_400_BAD_REQUEST)
+
+            book_reader.end_date = date.today()
+            book_reader.save()
+
+            book_hall.count += 1
+            book_hall.save()
+
+            return Response({&quot;detail&quot;: &quot;Book returned successfully&quot;}, status=status.HTTP_200_OK)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class AddBookAPIView(APIView):
+    def post(self, request):
+        serializer = AddBookRequestSerializer(data=request.data)
+
+        if serializer.is_valid():
+            book_id = serializer.validated_data['book']
+            hall_id = serializer.validated_data['hall']
+            amount = serializer.validated_data['amount'] if 'amount' in serializer.validated_data else 1
+
+            try:
+                book = Book.objects.get(id=book_id)
+                hall = Hall.objects.get(id=hall_id)
+            except (Book.DoesNotExist, Hall.DoesNotExist):
+                return Response({&quot;detail&quot;: &quot;Book or Hall not found&quot;}, status=status.HTTP_404_NOT_FOUND)
+
+            book_hall = BookHall.objects.filter(book=book, hall=hall).first()
+            if not book_hall:
+                book_hall = BookHall(book=book, hall=hall, count=amount)
+            else:
+                book_hall.count += amount
+            book_hall.save()
+
+            return Response({&quot;detail&quot;: &quot;Book added successfully&quot;}, status=status.HTTP_200_OK)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class RemoveBookAPIView(APIView):
+    def post(self, request):
+        serializer = AddBookRequestSerializer(data=request.data)
+
+        if serializer.is_valid():
+            book_id = serializer.validated_data['book']
+            hall_id = serializer.validated_data['hall']
+            amount = serializer.validated_data['amount'] if 'amount' in serializer.validated_data else 1
+
+            try:
+                book = Book.objects.get(id=book_id)
+                hall = Hall.objects.get(id=hall_id)
+            except (Book.DoesNotExist, Hall.DoesNotExist):
+                return Response({&quot;detail&quot;: &quot;Book or Hall not found&quot;}, status=status.HTTP_404_NOT_FOUND)
+
+            book_hall = BookHall.objects.filter(book=book, hall=hall).first()
+
+            if not book_hall:
+                return Response({&quot;detail&quot;: &quot;Book not available in this hall&quot;}, status=status.HTTP_400_BAD_REQUEST)
+
+            book_hall.count -= amount
+            if book_hall.count &lt;= 0:
+                book_hall.delete()
+            else:
+                book_hall.save()
+
+            return Response({&quot;detail&quot;: &quot;Book removed successfully&quot;}, status=status.HTTP_200_OK)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+</code></pre>
+<p><code>serializer.py</code></p>
+<pre><code class="language-python">from .models import *
+from rest_framework import serializers
+
+
+class PublisherSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Publisher
+        fields = [&quot;id&quot;, &quot;name&quot;, &quot;year&quot;]
+
+
+class AuthorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Author
+        fields = [&quot;id&quot;, &quot;surname&quot;, &quot;name&quot;, &quot;patronymic&quot;]
+
+
+class BookReadSerializer(serializers.ModelSerializer):
+    authors = serializers.SerializerMethodField()
+    publisher = PublisherSerializer()
+
+    class Meta:
+        model = Book
+        fields = ['id', 'name', 'publisher', 'cipher', 'authors']
+
+    def get_authors(self, obj):
+        authors = Author.objects.filter(bookauthor__book=obj)
+        return AuthorSerializer(authors, many=True).data
+
+
+class BookWriteSerializer(serializers.ModelSerializer):
+    authors = serializers.PrimaryKeyRelatedField(
+        many=True, queryset=Author.objects.all(), write_only=True
+    )
+
+    class Meta:
+        model = Book
+        fields = ['id', 'name', 'publisher', 'cipher', 'authors']
+
+    def create(self, validated_data):
+        authors_data = validated_data.pop('authors')
+        book = Book.objects.create(**validated_data)
+        BookAuthor.objects.bulk_create([
+            BookAuthor(book=book, author=author) for author in authors_data
+        ])
+        return book
+
+    def update(self, instance, validated_data):
+        authors_data = validated_data.pop('authors', None)
+        if authors_data is not None:
+            BookAuthor.objects.filter(book=instance).delete()
+            BookAuthor.objects.bulk_create([
+                BookAuthor(book=instance, author=author) for author in authors_data
+            ])
+        return super().update(instance, validated_data)
+
+
+class LibrarySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Library
+        fields = [&quot;id&quot;, &quot;name&quot;, &quot;address&quot;]
+
+
+class HallReadSerializer(serializers.ModelSerializer):
+    library = LibrarySerializer()
+
+    class Meta:
+        model = Hall
+        fields = [&quot;id&quot;, &quot;number&quot;, &quot;name&quot;, &quot;capacity&quot;, &quot;library&quot;]
+
+
+class HallWriteSerializer(serializers.ModelSerializer):
+    library = serializers.PrimaryKeyRelatedField(queryset=Library.objects.all())
+
+    class Meta:
+        model = Hall
+        fields = [&quot;id&quot;, &quot;number&quot;, &quot;name&quot;, &quot;capacity&quot;, &quot;library&quot;]
+
+    def update(self, instance, validated_data):
+        library_data = validated_data.pop('library', None)
+
+        if library_data:
+            instance.library = Library.objects.get(id=library_data.id)
+
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+
+        instance.save()
+        return instance
+
+
+class ReaderReadSerializer(serializers.ModelSerializer):
+    hall = HallReadSerializer()
+
+    class Meta:
+        model = Reader
+        fields = [&quot;id&quot;, &quot;surname&quot;, &quot;name&quot;, &quot;patronymic&quot;, &quot;ticket&quot;, &quot;passport&quot;, &quot;birth_date&quot;, &quot;address&quot;, &quot;phone&quot;, &quot;education&quot;, &quot;is_academic&quot;, &quot;hall&quot;]
+
+
+class ReaderWriteSerializer(serializers.ModelSerializer):
+    hall = serializers.PrimaryKeyRelatedField(queryset=Hall.objects.all())
+
+    class Meta:
+        model = Reader
+        fields = [&quot;id&quot;, &quot;surname&quot;, &quot;name&quot;, &quot;patronymic&quot;, &quot;ticket&quot;, &quot;passport&quot;, &quot;birth_date&quot;, &quot;address&quot;, &quot;phone&quot;, &quot;education&quot;, &quot;is_academic&quot;, &quot;hall&quot;]
+
+    def update(self, instance, validated_data):
+        hall_data = validated_data.pop('hall', None)
+
+        if hall_data:
+            instance.hall = Hall.objects.get(id=hall_data.id)
+
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+
+        instance.save()
+        return instance
+
+
+class BookReaderRequestSerializer(serializers.Serializer):
+    book = serializers.IntegerField()
+    reader = serializers.IntegerField()
+
+
+class AddBookRequestSerializer(serializers.Serializer):
+    book = serializers.IntegerField()
+    hall = serializers.IntegerField()
+    amount = serializers.IntegerField(required=False, min_value=1)
+</code></pre>
+<p><code>urls.py</code></p>
+<pre><code class="language-python">from django.urls import path
+from .views import *
+
+app_name = &quot;library&quot;
+
+urlpatterns = [
+   path('books/', BooksAPIView.as_view()),
+   path('books/&lt;int:pk&gt;', BookAPIView.as_view()),
+   path('authors/', AuthorsAPIView.as_view()),
+   path('authors/&lt;int:pk&gt;', AuthorAPIView.as_view()),
+   path('publishers/', PublishersAPIView.as_view()),
+   path('publishers/&lt;int:pk&gt;', PublisherAPIView.as_view()),
+   path('libraries/', LibrariesAPIView.as_view()),
+   path('libraries/&lt;int:pk&gt;', LibraryAPIView.as_view()),
+   path('halls/', HallsAPIView.as_view()),
+   path('halls/&lt;int:pk&gt;', HallAPIView.as_view()),
+   path('readers/', ReadersAPIView.as_view()),
+   path('readers/&lt;int:pk&gt;', ReaderAPIView.as_view()),
+
+   path('rent_book/', RentBookAPIView.as_view()),
+   path('return_book/', ReturnBookAPIView.as_view()),
+   path('add_book/', AddBookAPIView.as_view()),
+   path('remove_book/', RemoveBookAPIView.as_view())
+]
+</code></pre>
+<h2 id="api"><strong>Реализация API</strong></h2>
+<p>С помощью Django REST Framework разработан API для работы с библиотечной системой:</p>
+<ul>
+<li>CRUD-операции для <code>Publisher</code>, <code>Author</code>, <code>Book</code>, <code>Library</code>, <code>Hall</code>, <code>Reader</code>.</li>
+<li><strong>Реализован API-запрос для выдачи книги</strong>:</li>
+<li>Проверка наличия книги в зале, к которому привязан читатель.</li>
+<li>Уменьшение количества экземпляров книги в зале при выдаче.</li>
+<li>Создание записи в таблице <code>BookReader</code> с указанием <code>start_date</code>.</li>
+<li><strong>Реализован API-запрос для возврата книги</strong>:</li>
+<li>Поиск записи о выдаче книги с самой ранней датой.</li>
+<li>Установка <code>end_date</code> текущей датой.</li>
+<li>Увеличение количества экземпляров книги в зале при возврате.</li>
+<li><strong>Реализован API-запрос для добавления книги в зал</strong>:</li>
+<li>Проверка существования книги и зала.</li>
+<li>Если книга отсутствует в указанном зале, создается запись в таблице <code>BookHall</code>.</li>
+<li>Если книга уже есть в зале, увеличивается количество экземпляров.</li>
+<li><strong>Реализован API-запрос для удаления книги из зала</strong>:</li>
+<li>Проверка существования книги в зале.</li>
+<li>Если количество экземпляров после удаления меньше или равно нулю, запись из <code>BookHall</code> удаляется.</li>
+<li>Иначе количество экземпляров обновляется.</li>
+</ul>
+<h2 id="_3"><strong>Скриншоты:</strong></h2>
+<p><img alt="" src="../../images/18.png" />
+<img alt="" src="../../images/19.png" />
+<img alt="" src="../../images/20.png" />
+<img alt="" src="../../images/21.png" />
+<img alt="" src="../../images/22.png" />
+<img alt="" src="../../images/23.png" />
+<img alt="" src="../../images/24.png" />
+<img alt="" src="../../images/25.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

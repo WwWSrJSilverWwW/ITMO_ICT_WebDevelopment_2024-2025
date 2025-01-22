@@ -20,5 +20,8 @@ urlpatterns = [
    path('rent_book/', RentBookAPIView.as_view()),
    path('return_book/', ReturnBookAPIView.as_view()),
    path('add_book/', AddBookAPIView.as_view()),
-   path('remove_book/', RemoveBookAPIView.as_view())
+   path('remove_book/', RemoveBookAPIView.as_view()),
+
+   path('attach_user/', AttachUserAPIView.as_view()),
+   path('book_reader/<int:pk>', BookReaderAPIView.as_view()),
 ]

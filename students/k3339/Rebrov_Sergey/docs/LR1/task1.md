@@ -53,3 +53,9 @@ while True:
 
     server_socket.sendto(response.encode(), client_address)
 ```
+
+## **Скриншоты:**
+
+![](../images/01.png)
+
+![](../images/02.png)

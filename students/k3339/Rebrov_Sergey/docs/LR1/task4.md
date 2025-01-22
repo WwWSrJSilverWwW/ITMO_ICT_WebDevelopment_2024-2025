@@ -120,3 +120,13 @@ while True:
     thread = threading.Thread(target=handle_client, args=(client_socket,))
     thread.start()
 ```
+
+## **Скриншоты:**
+
+![](../images/07.png)
+
+![](../images/08.png)
+
+![](../images/09.png)
+
+![](../images/10.png)

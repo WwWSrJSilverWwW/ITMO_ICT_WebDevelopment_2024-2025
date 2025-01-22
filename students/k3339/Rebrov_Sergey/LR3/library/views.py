@@ -213,3 +213,43 @@ class RemoveBookAPIView(APIView):
             return Response({"detail": "Book removed successfully"}, status=status.HTTP_200_OK)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class AttachUserAPIView(APIView):
+    def post(self, request):
+        serializer = AttachUserRequestSerializer(data=request.data)
+
+        if serializer.is_valid():
+            reader_id = serializer.validated_data['reader']
+            hall_id = serializer.validated_data['hall']
+
+            try:
+                reader = Reader.objects.get(id=reader_id)
+                hall = Hall.objects.get(id=hall_id)
+            except (Reader.DoesNotExist, Hall.DoesNotExist):
+                return Response({"detail": "Reader or Hall not found"}, status=status.HTTP_404_NOT_FOUND)
+
+            reader.hall = hall
+            reader.save()
+
+            return Response({"detail": "Reader attached successfully"}, status=status.HTTP_200_OK)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class BookReaderAPIView(APIView):
+    queryset = Reader.objects.all()
+
+    def get_serializer_class(self):
+        return BookReadSerializer
+
+    def get(self, request, pk):
+        try:
+            reader = Reader.objects.get(id=pk)
+        except Reader.DoesNotExist:
+            return Response({"detail": "Reader not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        book_readers = BookReader.objects.filter(reader=reader, end_date=None)
+        books = [book_reader.book for book_reader in book_readers]
+
+        return Response(BookReadSerializer(books, many=True).data, status=status.HTTP_200_OK)

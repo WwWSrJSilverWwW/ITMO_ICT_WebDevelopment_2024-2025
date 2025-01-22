@@ -3,23 +3,23 @@ from django.db import models
 
 
 class User(AbstractUser):
-    REQUIRED_FIELDS = ['first_name', 'last_name']
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'is_staff']
 
     def __str__(self):
         return self.username
 
 
 class Publisher(models.Model):
-    name = models.CharField(max_length=128, null=False)
-    year = models.IntegerField(null=False)
+    name = models.CharField(max_length=128, null=True)
+    year = models.IntegerField(null=True)
 
     def __str__(self):
         return f"({self.name} {self.year})"
 
 
 class Author(models.Model):
-    surname = models.CharField(max_length=128, null=False)
-    name = models.CharField(max_length=128, null=False)
+    surname = models.CharField(max_length=128, null=True)
+    name = models.CharField(max_length=128, null=True)
     patronymic = models.CharField(max_length=128, null=True)
 
     def __str__(self):
@@ -27,16 +27,16 @@ class Author(models.Model):
 
 
 class Book(models.Model):
-    name = models.CharField(max_length=128, null=False)
+    name = models.CharField(max_length=128, null=True)
     publisher = models.ForeignKey(Publisher, null=True, on_delete=models.SET_NULL)
-    cipher = models.CharField(max_length=128, null=False)
+    cipher = models.CharField(max_length=128, null=True)
 
     def __str__(self):
         return f"({self.name})"
 
 
 class Library(models.Model):
-    name = models.CharField(max_length=128, null=False)
+    name = models.CharField(max_length=128, null=True)
     address = models.CharField(max_length=128, null=True)
 
     def __str__(self):
@@ -44,26 +44,27 @@ class Library(models.Model):
 
 
 class Hall(models.Model):
-    number = models.IntegerField(null=False)
+    number = models.IntegerField(null=True)
     name = models.CharField(max_length=128, null=True)
-    capacity = models.IntegerField(null=False)
-    library = models.ForeignKey(Library, null=False, on_delete=models.CASCADE)
+    capacity = models.IntegerField(null=True)
+    library = models.ForeignKey(Library, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"({self.number} {self.library})"
 
 
 class Reader(models.Model):
-    surname = models.CharField(max_length=128, null=False)
-    name = models.CharField(max_length=128, null=False)
+    user = models.ForeignKey(User, default=1, null=True, on_delete=models.CASCADE)
+    surname = models.CharField(max_length=128, null=True)
+    name = models.CharField(max_length=128, null=True)
     patronymic = models.CharField(max_length=128, null=True)
-    ticket = models.CharField(max_length=128, null=False)
-    passport = models.CharField(max_length=128, null=False)
+    ticket = models.CharField(max_length=128, null=True)
+    passport = models.CharField(max_length=128, null=True)
     birth_date = models.DateField(null=True)
     address = models.CharField(max_length=128, null=True)
-    phone = models.CharField(max_length=128, null=False)
+    phone = models.CharField(max_length=128, null=True)
     education = models.CharField(max_length=128, null=True)
-    is_academic = models.BooleanField(default=False, null=False)
+    is_academic = models.BooleanField(default=False, null=True)
     hall = models.ForeignKey(Hall, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
@@ -71,17 +72,17 @@ class Reader(models.Model):
 
 
 class BookAuthor(models.Model):
-    book = models.ForeignKey(Book, null=False, on_delete=models.CASCADE)
-    author = models.ForeignKey(Author, null=False, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, null=True, on_delete=models.CASCADE)
+    author = models.ForeignKey(Author, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"({self.book} {self.author})"
 
 
 class BookReader(models.Model):
-    book = models.ForeignKey(Book, null=False, on_delete=models.CASCADE)
-    reader = models.ForeignKey(Reader, null=False, on_delete=models.CASCADE)
-    start_date = models.DateField(null=False)
+    book = models.ForeignKey(Book, null=True, on_delete=models.CASCADE)
+    reader = models.ForeignKey(Reader, null=True, on_delete=models.CASCADE)
+    start_date = models.DateField(null=True)
     end_date = models.DateField(null=True)
 
     def __str__(self):
@@ -89,9 +90,9 @@ class BookReader(models.Model):
 
 
 class BookHall(models.Model):
-    book = models.ForeignKey(Book, null=False, on_delete=models.CASCADE)
-    hall = models.ForeignKey(Hall, null=False, on_delete=models.CASCADE)
-    count = models.IntegerField(null=False)
+    book = models.ForeignKey(Book, null=True, on_delete=models.CASCADE)
+    hall = models.ForeignKey(Hall, null=True, on_delete=models.CASCADE)
+    count = models.IntegerField(null=True)
 
     def __str__(self):
         return f"({self.book} {self.hall})"

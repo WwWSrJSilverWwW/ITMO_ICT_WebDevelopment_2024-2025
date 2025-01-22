@@ -39,3 +39,9 @@ while True:
     client_connection.sendall(http_response.encode())
     client_connection.close()
 ```
+
+## **Скриншоты:**
+
+![](../images/05.png)
+
+![](../images/06.png)
